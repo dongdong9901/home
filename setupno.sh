@@ -44,7 +44,7 @@ echo -e '{
 }' > ~/.homebridge/config.json
 
 echo '== Adding homebridge commands =='
-echo 'exec npx homebridge "$@" 2>&1 | tee ~/.homebridge/homebridge.log' > ~/../usr/bin/hb
+echo 'exec node --experimental-modules $(which homebridge) "$@" 2>&1 | tee ~/.homebridge/homebridge.log' > ~/../usr/bin/hb
 chmod +x ~/../usr/bin/hb
 
 echo -e '== Installation successful ==\nExecute hb command to start'
